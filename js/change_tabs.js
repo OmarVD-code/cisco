@@ -35,6 +35,13 @@ document.addEventListener("click", function (event) {
 
 // Inicializar event listeners cuando el documento carga
 document.addEventListener("DOMContentLoaded", function () {
+    const modalTriggerImages = document.querySelectorAll("img[data-view-image]");
+    modalTriggerImages.forEach(function (img) {
+        img.addEventListener("click", function () {
+            viewImage(img.src);
+        });
+    });
+
     // Event listeners para tabs
     const productTab = document.getElementById("product-tab");
     const imagesTab = document.getElementById("images-tab");
